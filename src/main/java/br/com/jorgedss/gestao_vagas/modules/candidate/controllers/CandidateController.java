@@ -15,7 +15,6 @@ public class CandidateController {
 
     @Autowired
     private CandidateRepository candidateRepository;
-
     @PostMapping("/")
     public CandidateEntity create(@Valid @RequestBody CandidateEntity candidateEntity){
        return this.candidateRepository.save(candidateEntity);
