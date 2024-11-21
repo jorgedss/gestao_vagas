@@ -27,7 +27,7 @@ public class CandidateController {
     private ProfileCandidateUseCase profileCandidateUseCase;
 
     @PostMapping("/")
-    @PreAuthorize("hasRole('CANDIDATE')")
+
     public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidateEntity){
        try{
            var result =  this.createCandidateUseCase.execute(candidateEntity);
@@ -38,6 +38,7 @@ public class CandidateController {
     }
 
     @GetMapping("/")
+    @PreAuthorize("hasRole('CANDIDATE')")
     public ResponseEntity<Object> get(HttpServletRequest request){
         var idCandidate = request.getAttribute("candidate_id");
 

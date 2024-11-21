@@ -6,5 +6,5 @@ import lombok.Data;
 public class CreateJobDTO {
     private String description;
     private String benefits;
-    private String lebel;
+    private String level;
 }
